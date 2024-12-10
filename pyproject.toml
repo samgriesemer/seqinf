@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools", "wheel", "setuptools-git-versioning>=2.0,<3"]
+build-backend = "setuptools.build_meta"
+
+# populates dynamically set version with latest git tag
+[tool.setuptools-git-versioning]
+enabled = true
+
+[project]
+name = "seqinf"
+description = "Sequential inference abstractions"
+readme = "README.md"
+requires-python = ">=3.10"
+dynamic = ["version"]
+#license = {file = "LICENSE"}
+authors = [
+  { name="Sam Griesemer", email="samgriesemer+git@gmail.com" },
+]
+keywords = ['simulation', 'machine learning', 'statistics']
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+]
+dependencies = ['sbi', 'sbibm']
+
+[project.optional-dependencies]
+tests = ["pytest"]
+docs = [
+    "sphinx",
+    "sphinx-togglebutton",
+    "sphinx-autodoc-typehints",
+    "furo",
+    "myst-parser",
+]
+jupyter = ["jupyter", "ipykernel"]
+
+[project.urls]
+Homepage = "https://doc.olog.io/<project-name>"
+Documentation = "https://doc.olog.io/<project-name>"
+Repository = "https://git.olog.io/olog/<project-name>"
+Issues = "https://git.olog.io/olog/<project-name>/issues"
+
+[tool.setuptools.packages.find]
+include = ["seqinf*"] # pattern to match package names 
