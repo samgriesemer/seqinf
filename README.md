@@ -38,5 +38,4 @@ following:
 
 
 [1]: https://github.com/sbi-dev/sbi
-[2]: https//arxiv.org
-
+[2]: https://arxiv.org/abs/2412.05590
